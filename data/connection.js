@@ -1,7 +1,10 @@
 const mongoose = require("mongoose");
+
+require("dotenv").config();
+
 mongoose.set("strictQuery", false);
 mongoose
-  .connect("mongodb://localhost:27017/vendor")
+  .connect(process.env.MONGO_URL)
   .then(() => console.log("connection is successful"))
   .catch((e) => console.log("Connection failed", e));
 
