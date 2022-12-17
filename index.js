@@ -19,6 +19,8 @@ app.delete("/:id", vendorDelete);
 
 app.patch("/:id", vendorUpdate);
 
-app.listen(`0.0.0.0:${process.env.PORT}`, () => {
-  console.log(`App listening`);
+const PATH = `0.0.0.0:${process.env.PORT}`;
+
+app.listen(PATH, () => {
+  console.log(`App listening on ${PATH}`);
 });
