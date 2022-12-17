@@ -8,7 +8,6 @@ const {
   vendorRecord,
 } = require("./controller/vendorInfo");
 
-const PORT = 4000;
 app.use(express.json());
 app.post("/", vendorDetails);
 
@@ -20,6 +19,6 @@ app.delete("/:id", vendorDelete);
 
 app.patch("/:id", vendorUpdate);
 
-app.listen(PORT, () => {
-  console.log(`App listening on port ${PORT} `);
+app.listen(`0.0.0.0:${process.env.PORT}`, () => {
+  console.log(`App listening`);
 });
