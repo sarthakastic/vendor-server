@@ -20,7 +20,7 @@ async function vendorDetails(req, res) {
 
 async function vendorInformation(req, res) {
   try {
-    const { page = 1, limit = 1 } = req.query;
+    const { page = 1, limit = 5 } = req.query;
 
     let user = await vendorInfo
       .find({})
